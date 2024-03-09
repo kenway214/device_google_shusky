@@ -4,9 +4,11 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Inherit some common Lineage stuff.
+# Inherit some common CherishOS stuff.
 TARGET_DISABLE_EPPE := true
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+DISABLE_ARTIFACT_PATH_REQUIREMENTS := true
+
+$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/google/shusky/aosp_shiba.mk)
@@ -17,7 +19,32 @@ include device/google/shusky/shiba/device-lineage.mk
 # Device identifier. This must come after all inclusions
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 8
-PRODUCT_NAME := lineage_shiba
+PRODUCT_NAME := cherish_shiba
+PRODUCT_DEVICE := shiba
+PRODUCT_MANUFACTURER := Google
+
+# CherishOS stuff.
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_ENABLE_BLUR := true
+
+# CherishOS Build.
+CHERISH_BUILD_TYPE=UNOFFICIAL
+WITH_GMS := true
+TARGET_IS_PIXEL := true
+TARGET_IS_PIXEL_8 := true
+TARGET_PIXEL_STAND_SUPPORTED := true
+EXTRA_UDFPS_ANIMATIONS := true
+
+# Cherish props
+CHERISH_MAINTAINER := Matthew
+CHERISH_CHIPSET := Google Tensor G3
+CHERISH_BATTERY := 5000mAh
+CHERISH_DISPLAY := 1080x2400
+
+# Nuke AudioFX
+TARGET_EXCLUDES_AUDIOFX := true
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400
