@@ -3,8 +3,8 @@ echo 'Starting to clone stuffs needed to build for husky'
 # Device common
 echo 'Cloning common device tree'
 
-git clone https://github.com/kenway214/device_google_zuma.git -b cherish-14 device/google/zuma
-git clone https://github.com/kenway214/device_google_gs101.git -b cherish-14 device/google/gs101
+git clone https://github.com/kenway214/device_google_zuma.git -b aosp-14 device/google/zuma
+git clone https://github.com/kenway214/device_google_gs101.git -b aosp-14 device/google/gs101
 git clone https://github.com/LineageOS/android_device_google_gs-common.git -b lineage-21 device/google/gs-common
 
 # Kernel
